@@ -18,62 +18,95 @@
             <div class="logo">
                 <a href="#inicio">Raian Nunes</a>
             </div>
-            
-    
+        
             <ul>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#tecnologias">Tecnologias</a></li>
                 <li><a href="#experiencia">Experiência</a></li>
+                <li><a href="#formacao">Formação</a></li>
                 <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
-    
+        
         </nav>
     </header>
+    <section id="inicio" class="hero">
 
-    <main>
-
-        <section id="inicio" class="hero">
-
-            <div class="hero-texto">
-        
-                
-        
-                <h1>Raian Nunes</h1>
-        
-                <h2>Desenvolvedor Júnior</h2>
-        
-                <p class="hero-descricao">
-                    Desenvolvedor em início de carreira, com foco em desenvolvimento
-                    de software, Python, banco de dados e tecnologias web.
-                </p>
-        
-                <div class="hero-botoes">
-        
-                    <a href="#projetos" class="botao-principal">
-                        Ver projetos
-                    </a>
-        
-                    <a href="https://github.com/raiandev-04"
-                       target="_blank">
-                        GitHub
-                    </a>
-        
-                    <a href="#"
-                       target="_blank">
-                        LinkedIn
-                    </a>
-        
-                </div>
-        
+        <div class="hero-texto">
+    
+            <p class="hero-introducao">Olá, eu sou</p>
+    
+            <h1>Raian Nunes</h1>
+    
+            <h2>Desenvolvedor Júnior</h2>
+    
+            <p class="hero-descricao">
+                Desenvolvedor em início de carreira, com conhecimentos em Python,
+                JavaScript, HTML, CSS, MySQL. Busco transformar aprendizado
+                em projetos práticos e evoluir profissionalmente na área de desenvolvimento.
+            </p>
+    
+            <div class="hero-botoes">
+    
+                <a href="#projetos" class="botao-principal">
+                    Ver projetos
+                </a>
+    
+                <a href="https://github.com/raiandev-04"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    GitHub
+                </a>
+    
+                <a href="#"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+    
             </div>
-        
-            <div class="hero-imagem">
-        
-                <img src="sua-foto.jpg"
-                     alt="Foto de Raian Nunes">
-        
-            </div>
+    
+        </div>
+    
+        <div class="hero-imagem">
+    
+            <img src="imagens/sua-foto.jpg"
+                 alt="Foto de Raian Nunes">
+    
+        </div>
+    </section>
+
+    
+    <section id="sobre" class="sobre">
+
+    <div>
+
+    <h2>Sobre Mim</h2>
+
+    <p>
+        Sou desenvolvedor júnior com formação técnica em Análise e
+        Desenvolvimento de Sistemas e atualmente continuo meus estudos
+        na área de tecnologia.
+    </p>
+
+    <p>
+        Tenho conhecimentos em Python, desenvolvimento web, banco de dados
+        MySQL e versionamento com Git e GitHub. Busco desenvolver projetos
+        que me permitam aplicar lógica de programação, resolver problemas
+        e evoluir como desenvolvedor.
+    </p>
+
+    <p>
+        Minha experiência profissional em Tecnologia da Informação também
+        me proporcionou contato com suporte técnico, usuários, sistemas,
+        equipamentos e resolução de problemas no ambiente de trabalho.
+    </p>
+    </div>
+
+</section>
+
+    
+    </section>
         
         </section>
         <section id="tecnologias" class="tecnologias">
@@ -82,35 +115,48 @@
         
             <div class="tecnologias-grid">
         
-                <div class="tecnologia-card">
-                    <h3>HTML</h3>
-                    <p>Estruturação de páginas web.</p>
-                </div>
+                <article class="tecnologia-grupo">
         
-                <div class="tecnologia-card">
-                    <h3>CSS</h3>
-                    <p>Estilização e responsividade.</p>
-                </div>
+                    <h3>Frontend</h3>
         
-                <div class="tecnologia-card">
-                    <h3>JavaScript</h3>
-                    <p>Interatividade em aplicações web.</p>
-                </div>
+                    <div class="tecnologia-lista">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
         
-                <div class="tecnologia-card">
-                    <h3>Python</h3>
-                    <p>Lógica de programação e desenvolvimento.</p>
-                </div>
+                </article>
         
-                <div class="tecnologia-card">
-                    <h3>MySQL</h3>
-                    <p>Banco de dados relacionais.</p>
-                </div>
+                <article class="tecnologia-grupo">
         
-                <div class="tecnologia-card">
-                    <h3>Git & GitHub</h3>
-                    <p>Versionamento e gerenciamento de código.</p>
-                </div>
+                    <h3>Backend</h3>
+        
+                    <div class="tecnologia-lista">
+                        <span>Python</span>
+                    </div>
+        
+                </article>
+        
+                <article class="tecnologia-grupo">
+        
+                    <h3>Banco de Dados</h3>
+        
+                    <div class="tecnologia-lista">
+                        <span>MySQL</span>
+                    </div>
+        
+                </article>
+        
+                <article class="tecnologia-grupo">
+        
+                    <h3>Ferramentas</h3>
+        
+                    <div class="tecnologia-lista">
+                        <span>Git</span>
+                        <span>GitHub</span>
+                    </div>
+        
+                </article>
         
             </div>
         
@@ -147,39 +193,116 @@
             </article>
         
         </section>
-        <section id="projetos" class="projetos">
 
-            <h2>Projetos</h2>
+            <section id="formacao" class="formacao">
         
-            <div class="projetos-grid">
-        
-                <article class="projeto-card">
-        
-                    <h3>Sistema de Restaurante</h3>
-        
-                    <p>
-                        Aplicação web desenvolvida para simular o fluxo de pedidos
-                        de um restaurante, desde a escolha dos produtos até a
-                        confirmação do pedido.
-                    </p>
-        
-                    <div class="tecnologias-projeto">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-
-        
-                    <div class="projeto-links">
-                        <a href="#" target="_blank">Ver projeto</a>
-                        <a href="#" target="_blank">GitHub</a>
-                    </div>
-        
-                </article>
-        
-            </div>
+                <h2>Formação</h2>
+            
+                <div class="formacao-grid">
+            
+                    <article class="formacao-card">
+            
+                        <h3>Análise e Desenvolvimento de Sistemas</h3>
+            
+                        <p class="formacao-instituicao">
+                            Faculdade Anhanguera
+                        </p>
+            
+                        <span class="formacao-status">
+                            Em andamento
+                        </span>
+            
+                        <p>
+                            Graduação voltada para desenvolvimento de software,
+                            programação, banco de dados, análise de sistemas
+                            e desenvolvimento de soluções tecnológicas.
+                        </p>
+            
+                    </article>
+            
+                    <article class="formacao-card">
+            
+                        <h3>Curso Técnico em Análise e Desenvolvimento de Sistemas</h3>
+                        <p class="formacao-instituicao">
+                            SENAI
+                        </p>
+            
+                        <span class="formacao-status">
+                            Concluído
+                        </span>
+            
+                        <p>
+                            Formação técnica com desenvolvimento de conhecimentos
+                            em programação, lógica, banco de dados e desenvolvimento
+                            de sistemas.
+                        </p>
+            
+                    </article>
+            
+                </div>
+            
+            </section>
         
         </section>
+        
+            
+        
+                <article class="projeto-card">
+
+                
+                        <h3>Sistema de Restaurante</h3>
+
+                    <div class="projeto-imagem">
+                        <img
+                            src="imagens/restaurante.png"
+                            alt="Tela do Sistema de Restaurante">
+                    </div>
+                
+                    <div class="projeto-conteudo">
+                
+                
+                        <p>
+                            Aplicação web desenvolvida para simular o processo de realização
+                            de pedidos em um restaurante, desde a escolha dos produtos até
+                            a confirmação final do pedido.
+                        </p>
+                
+                        <div class="projeto-funcionalidades">
+                
+                            <h4>Principais funcionalidades</h4>
+                
+                            <ul>
+                                <li>Visualização do cardápio.</li>
+                                <li>Seleção de produtos.</li>
+                                <li>Resumo do pedido.</li>
+                                <li>Cálculo do valor total.</li>
+                                <li>Confirmação do pedido.</li>
+                            </ul>
+                
+                        </div>
+                
+                        <div class="tecnologias-projeto">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                
+                        <div class="projeto-links">
+                
+                            <a href="#" target="_blank">
+                                Ver projeto
+                            </a>
+                
+                            <a href="#" target="_blank">
+                                GitHub
+                            </a>
+                
+                        </div>
+                
+                    </div>
+                
+                </article>
+            </article>
     </main>
     <section id="contato" class="contato">
 
