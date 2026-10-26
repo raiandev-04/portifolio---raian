@@ -1,7 +1,4 @@
-/* ========================================
-   VARIÁVEIS E CONFIGURAÇÕES GERAIS
-======================================== */
-
+/* Base, navegação e componentes */
 :root {
     --cor-fundo: #f5f7fa;
     --cor-texto: #1f2937;
@@ -24,21 +21,14 @@ body {
     font-family: Arial, sans-serif;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
+    overflow-wrap: anywhere;
 }
-
-
-/* ========================================
-   HEADER / NAVEGAÇÃO
-======================================== */
 
 header {
     width: 100%;
     background-color: var(--cor-card);
     border-bottom: 1px solid var(--cor-borda);
 
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 nav {
@@ -47,9 +37,11 @@ nav {
 
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
 
     padding: 20px 40px;
+    gap: 20px;
 }
 
 .logo a {
@@ -60,7 +52,9 @@ nav {
 
 nav ul {
     display: flex;
-    gap: 30px;
+    gap: 15px 30px;
+    flex-wrap: wrap;
+    justify-content: center;
 
     list-style: none;
 }
@@ -74,11 +68,6 @@ nav ul a:hover {
     color: var(--cor-destaque);
 }
 
-
-/* ========================================
-   HERO
-======================================== */
-
 .hero {
     min-height: 80vh;
     max-width: 1200px;
@@ -88,9 +77,11 @@ nav ul a:hover {
     align-items: center;
 
     padding: 80px 40px;
+    gap: 30px;
 }
 
 .hero-texto {
+    flex: 1 1 0;
     max-width: 700px;
 }
 
@@ -134,15 +125,12 @@ nav ul a:hover {
     transition: 0.2s;
 }
 
-.hero-botoes a:hover {
+.hero-botoes a:hover,
+.contato-links a:hover,
+.projeto-links a:hover {
     background-color: var(--cor-destaque);
     color: white;
 }
-
-
-/* ========================================
-   SOBRE MIM
-======================================== */
 
 .sobre {
     max-width: 900px;
@@ -164,26 +152,29 @@ nav ul a:hover {
     margin-bottom: 15px;
 }
 
-
-/* ========================================
-   TECNOLOGIAS
-======================================== */
-
-.tecnologias {
+.tecnologias,
+.experiencia,
+.formacao,
+.cursos,
+.projetos {
     max-width: 1100px;
     margin: 0 auto;
 
     padding: 80px 40px;
 }
 
-.tecnologias h2 {
+.tecnologias h2,
+.experiencia h2,
+.formacao h2,
+.cursos h2,
+.projetos h2 {
     font-size: 32px;
     margin-bottom: 30px;
 
-    position: relative;
 }
 
-.tecnologias h2::after {
+.tecnologias h2::after,
+.formacao h2::after {
     content: "";
     display: block;
 
@@ -195,15 +186,20 @@ nav ul a:hover {
     margin-top: 8px;
 }
 
-.tecnologias-grid {
+.tecnologias-grid,
+.formacao-grid,
+.cursos-grid,
+.projetos-grid {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 25px;
 }
 
-.tecnologia-grupo {
+.tecnologia-grupo,
+.formacao-card,
+.curso-card {
     background-color: var(--cor-card);
 
     border: 1px solid var(--cor-borda);
@@ -216,7 +212,9 @@ nav ul a:hover {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.tecnologia-grupo:hover {
+.tecnologia-grupo:hover,
+.formacao-card:hover,
+.projeto-card:hover {
     transform: translateY(-5px);
 
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -248,24 +246,6 @@ nav ul a:hover {
     font-weight: bold;
 }
 
-
-/* ========================================
-   EXPERIÊNCIA
-======================================== */
-
-.experiencia {
-    max-width: 1100px;
-    margin: 0 auto;
-
-    padding: 80px 40px;
-}
-
-.experiencia h2 {
-    font-size: 32px;
-
-    margin-bottom: 30px;
-}
-
 .experiencia-card {
     background-color: var(--cor-card);
 
@@ -278,6 +258,7 @@ nav ul a:hover {
 .experiencia-topo {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: flex-start;
 
     gap: 20px;
@@ -318,65 +299,6 @@ nav ul a:hover {
     line-height: 1.5;
 }
 
-
-/* ========================================
-   FORMAÇÃO
-======================================== */
-
-.formacao {
-    max-width: 1100px;
-    margin: 0 auto;
-
-    padding: 80px 40px;
-}
-
-.formacao h2 {
-    font-size: 32px;
-
-    margin-bottom: 30px;
-
-    position: relative;
-}
-
-.formacao h2::after {
-    content: "";
-    display: block;
-
-    width: 50px;
-    height: 3px;
-
-    background-color: var(--cor-destaque);
-
-    margin-top: 8px;
-}
-
-.formacao-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 25px;
-}
-
-.formacao-card {
-    background-color: var(--cor-card);
-
-    border: 1px solid var(--cor-borda);
-    border-radius: 10px;
-
-    padding: 25px;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.formacao-card:hover {
-    transform: translateY(-5px);
-
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
 .formacao-card h3 {
     font-size: 21px;
 
@@ -405,34 +327,9 @@ nav ul a:hover {
     font-weight: bold;
 }
 
-.formacao-card p {
+.formacao-card p,
+.curso-card p {
     line-height: 1.6;
-}
-
-
-/* ========================================
-   PROJETOS
-======================================== */
-
-.projetos {
-    max-width: 1100px;
-    margin: 0 auto;
-
-    padding: 80px 40px;
-}
-
-.projetos h2 {
-    font-size: 32px;
-
-    margin-bottom: 30px;
-}
-
-.projetos-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 25px;
 }
 
 .projeto-card {
@@ -446,26 +343,6 @@ nav ul a:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 
     transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.projeto-card:hover {
-    transform: translateY(-5px);
-
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-.projeto-imagem {
-    width: 100%;
-    height: 220px;
-
-    overflow: hidden;
-}
-
-.projeto-imagem img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
 }
 
 .projeto-conteudo {
@@ -483,36 +360,6 @@ nav ul a:hover {
 
     margin-bottom: 20px;
 }
-
-
-/* ========================================
-   FUNCIONALIDADES DO PROJETO
-======================================== */
-
-.projeto-funcionalidades {
-    margin-bottom: 20px;
-}
-
-.projeto-funcionalidades h4 {
-    font-size: 16px;
-
-    margin-bottom: 10px;
-}
-
-.projeto-funcionalidades ul {
-    padding-left: 20px;
-}
-
-.projeto-funcionalidades li {
-    margin-bottom: 6px;
-
-    line-height: 1.5;
-}
-
-
-/* ========================================
-   TECNOLOGIAS DO PROJETO
-======================================== */
 
 .tecnologias-projeto {
     display: flex;
@@ -533,42 +380,6 @@ nav ul a:hover {
 
     font-size: 14px;
 }
-
-
-/* ========================================
-   LINKS DOS PROJETOS
-======================================== */
-
-.projeto-links {
-    display: flex;
-
-    gap: 15px;
-}
-
-.projeto-links a {
-    padding: 9px 15px;
-
-    border: 1px solid var(--cor-destaque);
-    border-radius: 5px;
-
-    color: var(--cor-destaque);
-
-    text-decoration: none;
-    font-weight: bold;
-
-    transition: 0.2s;
-}
-
-.projeto-links a:hover {
-    background-color: var(--cor-destaque);
-
-    color: white;
-}
-
-
-/* ========================================
-   CONTATO
-======================================== */
 
 .contato {
     max-width: 900px;
@@ -600,7 +411,8 @@ nav ul a:hover {
     gap: 15px;
 }
 
-.contato-links a {
+.contato-links a,
+.projeto-links a {
     padding: 10px 18px;
 
     border: 1px solid var(--cor-destaque);
@@ -613,17 +425,6 @@ nav ul a:hover {
 
     transition: 0.2s;
 }
-
-.contato-links a:hover {
-    background-color: var(--cor-destaque);
-
-    color: white;
-}
-
-
-/* ========================================
-   FOOTER
-======================================== */
 
 footer {
     background-color: var(--cor-card);
@@ -639,13 +440,8 @@ footer p {
     font-size: 14px;
 }
 
-
-/* ========================================
-   RESPONSIVIDADE - TABLET / CELULAR
-======================================== */
-
+/* Responsividade */
 @media (max-width: 768px) {
-
     nav {
         flex-direction: column;
 
@@ -653,9 +449,6 @@ footer p {
     }
 
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-
         gap: 15px;
     }
 
@@ -683,19 +476,15 @@ footer p {
     .tecnologias,
     .experiencia,
     .formacao,
+    .cursos,
     .projetos,
     .contato {
         padding: 60px 20px;
     }
 
-    .tecnologias-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .formacao-grid {
-        grid-template-columns: 1fr;
-    }
-
+    .tecnologias-grid,
+    .formacao-grid,
+    .cursos-grid,
     .projetos-grid {
         grid-template-columns: 1fr;
     }
@@ -705,26 +494,119 @@ footer p {
     }
 }
 
-
-/* ========================================
-   RESPONSIVIDADE - CELULAR PEQUENO
-======================================== */
-
+/* Responsividade */
 @media (max-width: 480px) {
-
     .hero h1 {
         font-size: 32px;
     }
 
-    .hero-botoes {
+    .hero-botoes,
+    .contato-links {
         flex-direction: column;
     }
 
     .hero-botoes a {
         text-align: center;
     }
+}
 
-    .contato-links {
-        flex-direction: column;
+/* Acessibilidade e ajustes de layout */
+main:focus {
+    outline: none;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 4px;
+}
+
+.pular-conteudo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+    transform: translateY(-200%);
+    padding: 12px 20px;
+    background-color: var(--cor-card);
+    color: var(--cor-destaque);
+}
+
+.pular-conteudo:focus {
+    transform: translateY(0);
+}
+
+.hero-botoes .botao-principal {
+    background-color: var(--cor-destaque);
+    color: white;
+}
+
+.hero-botoes .botao-principal:hover {
+    background-color: var(--cor-texto);
+}
+
+.tecnologia-grupo,
+.formacao-card,
+.projeto-card,
+.hero-texto {
+    min-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none;
+    }
+
+    .tecnologia-grupo:hover,
+    .formacao-card:hover,
+    .projeto-card:hover {
+        transform: none;
+    }
+}
+
+/* Cursos e imagens locais */
+.curso-card h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.projeto-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Imagem da apresentação e futura captura do projeto */
+.hero-imagem {
+    flex: 0 0 clamp(240px, 28vw, 340px);
+    min-width: 0;
+}
+
+.hero-imagem img,
+.projeto-imagem img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.hero-imagem img {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--cor-borda);
+}
+
+@media (max-width: 768px) {
+    .hero-texto {
+        flex: 0 1 auto;
+    }
+
+    .hero-imagem {
+        flex: 0 1 auto;
+        width: min(100%, 280px);
     }
 }
