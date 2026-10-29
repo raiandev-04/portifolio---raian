@@ -5,6 +5,10 @@
     --cor-destaque: #2563eb;
     --cor-card: #ffffff;
     --cor-borda: #d1d5db;
+    --cor-sobre-destaque: #ffffff;
+    --cor-realce-suave: rgba(37, 99, 235, 0.08);
+    --sombra-realce: 0 20px 55px rgba(37, 99, 235, 0.14);
+    color-scheme: light;
 }
 
 * {
@@ -35,24 +39,53 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
 
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
-
-    padding: 20px 40px;
-    gap: 20px;
+    padding: 18px 40px;
+    gap: 24px;
 }
 
 .logo a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
     color: var(--cor-texto);
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
+    white-space: nowrap;
+}
+
+.logo-simbolo {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px 4px;
+    background: var(--cor-destaque);
+    color: var(--cor-sobre-destaque);
+    font-family: Consolas, monospace;
+    font-size: 27px;
+    line-height: 1;
+}
+
+.logo-nome {
+    letter-spacing: -0.03em;
+}
+
+.logo {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#menu {
+    grid-column: 2;
+    grid-row: 1;
 }
 
 nav ul {
     display: flex;
-    gap: 15px 30px;
+    gap: 12px 18px;
     flex-wrap: wrap;
     justify-content: center;
 
@@ -69,15 +102,16 @@ nav ul a:hover {
 }
 
 .hero {
-    min-height: 80vh;
+    position: relative;
+    isolation: isolate;
     max-width: 1200px;
     margin: 0 auto;
 
     display: flex;
     align-items: center;
 
-    padding: 80px 40px;
-    gap: 30px;
+    padding: clamp(56px, 8vw, 104px) 40px;
+    gap: clamp(32px, 5vw, 72px);
 }
 
 .hero-texto {
@@ -86,14 +120,15 @@ nav ul a:hover {
 }
 
 .hero h1 {
-    font-size: 52px;
-    line-height: 1.1;
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -0.055em;
 
     margin-bottom: 15px;
 }
 
 .hero h2 {
-    font-size: 28px;
+    font-size: clamp(1.2rem, 2.5vw, 1.75rem);
     color: var(--cor-destaque);
 
     margin-bottom: 20px;
@@ -122,14 +157,14 @@ nav ul a:hover {
     text-decoration: none;
     font-weight: bold;
 
-    transition: 0.2s;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 .hero-botoes a:hover,
 .contato-links a:hover,
 .projeto-links a:hover {
     background-color: var(--cor-destaque);
-    color: white;
+    color: var(--cor-sobre-destaque);
 }
 
 .sobre {
@@ -423,7 +458,7 @@ nav ul a:hover {
     text-decoration: none;
     font-weight: bold;
 
-    transition: 0.2s;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 footer {
@@ -442,12 +477,6 @@ footer p {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-
-        gap: 20px;
-    }
-
     nav ul {
         gap: 15px;
     }
@@ -457,15 +486,8 @@ footer p {
 
         text-align: center;
 
-        padding: 60px 20px;
-    }
-
-    .hero h1 {
-        font-size: 38px;
-    }
-
-    .hero h2 {
-        font-size: 24px;
+        padding: 40px 20px 48px;
+        gap: 36px;
     }
 
     .hero-botoes {
@@ -496,10 +518,6 @@ footer p {
 
 /* Responsividade */
 @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 32px;
-    }
-
     .hero-botoes,
     .contato-links {
         flex-direction: column;
@@ -515,7 +533,8 @@ main:focus {
     outline: none;
 }
 
-a:focus-visible {
+a:focus-visible,
+button:focus-visible {
     outline: 3px solid var(--cor-destaque);
     outline-offset: 4px;
 }
@@ -537,7 +556,7 @@ a:focus-visible {
 
 .hero-botoes .botao-principal {
     background-color: var(--cor-destaque);
-    color: white;
+    color: var(--cor-sobre-destaque);
 }
 
 .hero-botoes .botao-principal:hover {
@@ -583,7 +602,8 @@ a:focus-visible {
 
 /* Imagem da apresentação e futura captura do projeto */
 .hero-imagem {
-    flex: 0 0 clamp(240px, 28vw, 340px);
+    position: relative;
+    flex: 0 0 clamp(240px, 30vw, 360px);
     min-width: 0;
 }
 
@@ -596,8 +616,9 @@ a:focus-visible {
 
 .hero-imagem img {
     width: 100%;
-    border-radius: 12px;
-    border: 1px solid var(--cor-borda);
+    border-radius: 32px 12px;
+    border: 5px solid var(--cor-card);
+    box-shadow: var(--sombra-realce);
 }
 
 @media (max-width: 768px) {
@@ -607,6 +628,200 @@ a:focus-visible {
 
     .hero-imagem {
         flex: 0 1 auto;
-        width: min(100%, 280px);
+        width: min(72vw, 260px);
     }
+}
+
+/* Base funcional da V3: a identidade visual será refinada nas próximas etapas. */
+:root[data-tema="escuro"] {
+    --cor-fundo: #111827;
+    --cor-texto: #e5e7eb;
+    --cor-destaque: #93c5fd;
+    --cor-card: #1f2937;
+    --cor-borda: #4b5563;
+    --cor-sobre-destaque: #111827;
+    --cor-realce-suave: rgba(147, 197, 253, 0.08);
+    --sombra-realce: 0 20px 55px rgba(0, 0, 0, 0.3);
+    color-scheme: dark;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.nav-controles {
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.tema-botao,
+.menu-botao,
+.digitacao-botao {
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    color: var(--cor-texto);
+    background-color: var(--cor-card);
+}
+
+.menu-botao {
+    display: none;
+}
+
+.digitacao-botao {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.hero-cargo {
+    min-height: 1.3em;
+}
+
+#digitando {
+    display: inline-block;
+    min-height: 1.2em;
+}
+
+.progresso {
+    position: fixed;
+    inset: 0 0 auto;
+    height: 3px;
+    background-color: var(--cor-destaque);
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: 1002;
+    pointer-events: none;
+}
+
+nav a.ativo {
+    color: var(--cor-destaque);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.visualmente-oculto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 768px) {
+    nav {
+        grid-template-columns: minmax(0, 1fr) auto;
+        padding: 16px;
+        gap: 16px 12px;
+    }
+
+    .logo a {
+        gap: 8px;
+        font-size: 18px;
+    }
+
+    .logo-simbolo {
+        width: 32px;
+        height: 36px;
+        font-size: 24px;
+    }
+
+    .nav-controles {
+        grid-column: 2;
+        gap: 6px;
+    }
+
+    .tema-botao {
+        width: 44px;
+        padding: 0;
+        font-size: 0;
+    }
+
+    .tema-botao::before {
+        content: "◐";
+        font-size: 24px;
+    }
+
+    #menu {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .menu-pronto .menu-botao {
+        display: inline-block;
+    }
+
+    .menu-pronto #menu {
+        display: none;
+    }
+
+    .menu-pronto #menu.aberto {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #menu a {
+        display: block;
+        padding: 12px;
+    }
+}
+
+/* Garante que controles de aprimoramento não apareçam sem inicialização do JS. */
+[hidden] {
+    display: none !important;
+}
+
+/* Composição do Hero: decoração leve, sem imagens extras ou movimento contínuo. */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(ellipse at 80% 45%, var(--cor-realce-suave), transparent 65%);
+    pointer-events: none;
+}
+
+.hero-imagem::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    z-index: -1;
+    border: 1px solid var(--cor-borda);
+    border-radius: 36px 14px;
+    transform: rotate(4deg);
+    pointer-events: none;
+}
+
+.hero .hero-introducao {
+    margin-bottom: 16px;
+    color: var(--cor-destaque);
+    font-family: Consolas, monospace;
+    font-size: 15px;
+}
+
+.hero .hero-descricao {
+    max-width: 58ch;
+    font-size: 17px;
+}
+
+.digitacao-botao {
+    padding: 6px 0;
+    border: 0;
+    background: transparent;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+::selection {
+    background: var(--cor-destaque);
+    color: var(--cor-sobre-destaque);
 }
