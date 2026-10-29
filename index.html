@@ -10,28 +10,43 @@
         <link rel="stylesheet" href="portifolio.css">
     </head>
 
-    <body>
-        <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+<body>
 
-        <header>
-            <nav aria-label="Navegação principal">
 
-                <div class="logo">
-                    <a href="#inicio">Raian Nunes</a>
-                </div>
+    <div class="progresso" aria-hidden="true"></div>
 
-                <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#tecnologias">Tecnologias</a></li>
-                    <li><a href="#experiencia">Experiência</a></li>
-                    <li><a href="#formacao">Formação</a></li>
-                    <li><a href="#cursos">Cursos e Certificações</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
+    <a href="#conteudo" class="pular-conteudo">
+        Pular para o conteúdo
+    </a>
 
-            </nav>
-        </header>
+    <header>
+
+        <nav aria-label="Navegação principal">
+
+            <div class="logo">
+                <a href="#inicio">
+                    <span class="logo-simbolo" aria-hidden="true">R</span>
+                    <span class="logo-nome">Raian Nunes</span>
+                </a>
+            </div>
+
+            <div class="nav-controles">
+                <button class="tema-botao" type="button" hidden>Tema escuro</button>
+                <button class="menu-botao" type="button" aria-controls="menu" aria-expanded="false" hidden>Menu</button>
+            </div>
+
+            <ul id="menu">
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#tecnologias">Tecnologias</a></li>
+                <li><a href="#experiencia">Experiência</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#cursos">Cursos e Certificações</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+
+        </nav>
+    </header>
         <main id="conteudo" tabindex="-1">
             <section id="inicio" class="hero">
 
@@ -41,7 +56,11 @@
 
                     <h1>Raian Nunes</h1>
 
-                    <h2>Desenvolvedor Júnior</h2>
+                    <h2 class="hero-cargo">
+                        <span class="visualmente-oculto">Desenvolvedor Júnior</span>
+                        <span id="digitando" aria-hidden="true" data-frases='["Desenvolvedor Júnior"]'>Desenvolvedor Júnior</span>
+                    </h2>
+                    <button class="digitacao-botao" type="button" hidden>Pausar animação</button>
 
                     <p class="hero-descricao">
                         Desenvolvedor em início de carreira, com conhecimentos em Python,
@@ -69,6 +88,38 @@
                     <img src="imagens/Desenvolvedor sorridente em escritório aconchegante.png"
                         alt="Ilustração de um desenvolvedor sorrindo em um escritório"
                         width="1254" height="1254" decoding="async">
+                </div>
+            </section>
+
+            <section id="projetos" class="projetos">
+                <h2>Projetos</h2>
+                <div class="projetos-grid">
+                    <article class="projeto-card">
+                        <!-- TODO: colocar uma captura real em imagens/restaurante.png e ativar o bloco abaixo.
+                        O caminho esperado pelo HTML é imagens/restaurante.png; manter comentado até o arquivo existir.
+                        <div class="projeto-imagem">
+                            <img src="imagens/restaurante.png" alt="Tela do Sistema de Restaurante" loading="lazy">
+                        </div>
+                        -->
+                        <div class="projeto-conteudo">
+                            <h3>Sistema de Restaurante</h3>
+                            <p>
+                                Aplicação de gestão de pedidos para restaurante, desenvolvida em Python com Kivy/KivyMD e MySQL.
+                                O repositório e as telas disponíveis ainda estão em organização.
+                            </p>
+                            <!-- TODO: validar a execução dos fluxos do restaurante antes de detalhar funcionalidades testadas. -->
+                            <div class="tecnologias-projeto" role="group" aria-label="Tecnologias do projeto">
+                                <span>Python</span>
+                                <span>Kivy / KivyMD</span>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="projeto-links">
+                                <a href="https://github.com/raiandev-04/TCC" target="_blank" rel="noopener noreferrer">
+                                    GitHub do projeto
+                                </a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </section>
 
@@ -176,7 +227,7 @@
                         <li>Atendimento e suporte técnico aos usuários.</li>
                         <li>Registro e acompanhamento de chamados.</li>
                         <li>Manutenção preventiva de computadores.</li>
-                        <li>Instalação e configuração de sistemas Windows e Linux.</li>
+                        <li>Instalação e configuração de sistemas Windows</li>
                         <li>Apoio em redes, equipamentos e eventos institucionais.</li>
                     </ul>
 
@@ -249,39 +300,7 @@
                 caso deseje exibir esses dados. Nenhum certificado foi presumido ou vinculado. -->
             </section>
 
-            <section id="projetos" class="projetos">
-                <h2>Projetos</h2>
-                <div class="projetos-grid">
-                    <article class="projeto-card">
-                        <!-- TODO: colocar uma captura real em imagens/restaurante.png e ativar o bloco abaixo.
-                        O caminho esperado pelo HTML é imagens/restaurante.png; manter comentado até o arquivo existir.
-                        <div class="projeto-imagem">
-                            <img src="imagens/restaurante.png" alt="Tela do Sistema de Restaurante" loading="lazy">
-                        </div>
-                        -->
-                        <div class="projeto-conteudo">
-                            <h3>Sistema de Restaurante</h3>
-                            <p>
-                                Projeto de aplicação web de um sistema de restaurante.
-                                O repositório e as telas disponíveis ainda estão em organização.
-                            </p>
-                            <!-- TODO: confirmar no código do restaurante as funcionalidades antes descritas:
-                            cardápio, seleção de produtos, resumo, cálculo do total e confirmação do pedido.
-                            Publicar somente as funcionalidades efetivamente implementadas. -->
-                            <div class="tecnologias-projeto" role="group" aria-label="Tecnologias do projeto">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="projeto-links">
-                                <a href="https://github.com/raiandev-04/TCC" target="_blank" rel="noopener noreferrer">
-                                    GitHub do projeto
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </section>
+
 
             <section id="contato" class="contato">
 
@@ -314,6 +333,7 @@
             <p>Raian Nunes</p>
         </footer>
 
+        <script src="portifolio.js" defer></script>
     </body>
 
 </html>
