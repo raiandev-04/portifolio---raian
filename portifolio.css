@@ -233,7 +233,6 @@ nav ul a:hover {
     gap: 25px;
 }
 
-.tecnologia-grupo,
 .formacao-card {
     background-color: var(--cor-card);
 
@@ -247,7 +246,6 @@ nav ul a:hover {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.tecnologia-grupo:hover,
 .formacao-card:hover,
 .projeto-card:hover {
     transform: translateY(-5px);
@@ -255,30 +253,116 @@ nav ul a:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.tecnologia-grupo h3 {
-    font-size: 20px;
-    color: var(--cor-destaque);
+/* Tecnologias: a categoria é o cartão; cada item é apenas ícone e nome. */
+.tecnologia-grupo {
+    padding: clamp(20px, 2.5vw, 28px);
+    border: 1px solid var(--cor-borda);
+    border-radius: 14px;
+    background-color: var(--cor-card);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
 
-    margin-bottom: 15px;
+.tecnologia-grupo h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    color: var(--cor-texto);
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.tecnologia-grupo h3::before {
+    content: "";
+    width: 6px;
+    height: 18px;
+    flex-shrink: 0;
+    border-radius: 3px;
+    background-color: var(--cor-destaque);
 }
 
 .tecnologia-lista {
     display: flex;
     flex-wrap: wrap;
-
-    gap: 10px;
+    gap: 24px 28px;
 }
 
-.tecnologia-lista span {
-    background-color: var(--cor-fundo);
+.tecnologia-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex: 0 0 104px;
+    min-width: 0;
+    padding: 8px 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
 
-    border: 1px solid var(--cor-borda);
-    border-radius: 6px;
+.tecnologia-item img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    object-fit: contain;
+    transition: transform 0.2s;
+}
 
-    padding: 8px 12px;
+.tecnologia-nome {
+    color: var(--cor-texto);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
 
-    font-size: 14px;
-    font-weight: bold;
+/* O SVG monocromático do GitHub fica claro somente no tema escuro. */
+:root[data-tema="escuro"] .tecnologia-item img[src$="/github.svg"] {
+    filter: invert(1);
+}
+
+@media (max-width: 480px) {
+    .tecnologia-lista {
+        gap: 24px 16px;
+    }
+
+    .tecnologia-item {
+        flex-basis: 80px;
+    }
+
+    .tecnologia-item img {
+        width: 52px;
+        height: 52px;
+    }
+
+    .tecnologia-nome {
+        font-size: 15px;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .tecnologia-item:hover img {
+        transform: translateY(-3px);
+    }
+
+    .tecnologia-item:hover .tecnologia-nome {
+        color: var(--cor-destaque);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tecnologia-item img,
+    .tecnologia-nome {
+        transition: none;
+    }
+
+    .tecnologia-item:hover img {
+        transform: none;
+    }
 }
 
 .experiencia-card {
