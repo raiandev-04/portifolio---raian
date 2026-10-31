@@ -1,0 +1,10 @@
+# Capas dos projetos
+
+Os quatro PNGs são **artes de apresentação**, compostas em HTML/CSS e exportadas em 1200 × 750 px. Nenhuma imagem é screenshot da aplicação original. Os registros, mesas, valores e chamados são ilustrativos.
+
+- `restaurante.png`: composição das telas `telaPedidos.py` e `telaCozinha.py`, do [TCC](https://github.com/raiandev-04/TCC), em `projetoSAP-TCC-main/implementacao/screens/`. Foram consultados também `main.py`, `database.py`, `telaMenu.py`, `telaMenuGestao.py`, `telaCadastroPrato.py` e `telaCadastroFuncionario.py`. Fundo escuro, campos de mesa/observação, categorias, botões e estados foram baseados no código. Logo `assets/logoSAP3.png` e imagens `assets/pratos/macarronada.png` e `assets/pratos/brownie.png` vieram do mesmo repositório. A composição adapta as proporções para a capa; não comprova execução dos fluxos com MySQL.
+- `crud.png`: formulário e listagem baseados em `CRUD/index/index.html`, `CRUD/css/style.css` e `CRUD/js/CRUD.js` do [CRUD](https://github.com/raiandev-04/CRUD). Mostra registros ilustrativos em memória, sem sugerir autenticação ou persistência.
+- `chamados.png`: formulário, consulta e status baseados em `html/dashboard.html`, `html/atualizarChamado.html` e `Javascript/server.js` de [Chamados Técnicos](https://github.com/raiandev-04/Chamado-Tecnico). A composição não comprova a execução integrada com banco de dados.
+- `caixa.png`: composição do terminal e recibo baseada em `python-learning-projects/sistema-caixa/sistema_caixa.py` de [Sistema Caixa](https://github.com/raiandev-04/projetos-python-curso-em-video). Um exemplo foi executado com 2 cafés de R$ 10 e 2 pães de R$ 5: total de R$ 30, desconto em dinheiro de R$ 1,50, pagamento de R$ 50 e troco de R$ 21,50. Os rótulos foram abreviados para a capa; não representa uma interface gráfica do software.
+
+Não foram criadas URLs de demonstração. As capas não adicionam funcionalidades aos projetos. TODO: substituir por capturas reais quando os fluxos e o ambiente de execução estiverem validados e as imagens forem fornecidas.

@@ -91,32 +91,119 @@
                 </div>
             </section>
 
-            <section id="projetos" class="projetos">
-                <h2>Projetos</h2>
+
+            <section id="projetos" class="projetos" aria-labelledby="projetos-titulo">
+                <h2 id="projetos-titulo">Projetos</h2>
                 <div class="projetos-grid">
                     <article class="projeto-card">
-                        <!-- TODO: colocar uma captura real em imagens/restaurante.png e ativar o bloco abaixo.
-                        O caminho esperado pelo HTML é imagens/restaurante.png; manter comentado até o arquivo existir.
-                        <div class="projeto-imagem">
-                            <img src="imagens/restaurante.png" alt="Tela do Sistema de Restaurante" loading="lazy">
-                        </div>
-                        -->
+                        <figure class="projeto-imagem">
+                            <img src="imagens/projetos/restaurante.png"
+                                alt="Composição ilustrativa das telas de pedidos e cozinha do Sistema de Restaurante."
+                                width="1200" height="750" loading="lazy" decoding="async">
+                            <figcaption>Arte de apresentação baseada na interface do projeto</figcaption>
+                        </figure>
                         <div class="projeto-conteudo">
-                            <h3>Sistema de Restaurante</h3>
+                            <h3>Sistema de Restaurante — TCC</h3>
+
                             <p>
-                                Aplicação de gestão de pedidos para restaurante, desenvolvida em Python com Kivy/KivyMD e MySQL.
+                                Aplicação de gestão de pedidos para restaurante,
+                                desenvolvida em Python com Kivy/KivyMD e MySQL.
                                 O repositório e as telas disponíveis ainda estão em organização.
                             </p>
+
                             <!-- TODO: validar a execução dos fluxos do restaurante antes de detalhar funcionalidades testadas. -->
+
                             <div class="tecnologias-projeto" role="group" aria-label="Tecnologias do projeto">
                                 <span>Python</span>
                                 <span>Kivy / KivyMD</span>
                                 <span>MySQL</span>
                             </div>
+
                             <div class="projeto-links">
-                                <a href="https://github.com/raiandev-04/TCC" target="_blank" rel="noopener noreferrer">
-                                    GitHub do projeto
+                                <a href="https://github.com/raiandev-04/TCC"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+                                    GitHub do projeto<span class="visualmente-oculto">: Sistema de Restaurante</span>
                                 </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="projeto-card">
+                        <figure class="projeto-imagem">
+                            <img src="imagens/projetos/chamados.png"
+                                alt="Composição ilustrativa de formulário e consulta de chamados técnicos."
+                                width="1200" height="750" loading="lazy" decoding="async">
+                            <figcaption>Arte de apresentação do projeto · dados ilustrativos</figcaption>
+                        </figure>
+                        <div class="projeto-conteudo">
+                            <h3>Chamados Técnicos</h3>
+                            <p>Projeto voltado ao registro e acompanhamento de chamados de suporte técnico, inspirado na experiência de estágio no IFBA.</p>
+                            <!-- TODO: validar a execução integrada e alinhar as instruções do README do repositório. -->
+                            <p class="projeto-nota">Integração com banco de dados presente no código; execução completa ainda não validada.</p>
+                            <div class="tecnologias-projeto" role="group" aria-label="Tecnologias do projeto">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Node.js</span>
+                                <span>Express</span>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="projeto-links">
+                                <a href="https://github.com/raiandev-04/Chamado-Tecnico" target="_blank" rel="noopener noreferrer">GitHub do projeto<span class="visualmente-oculto">: Chamados Técnicos</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="projeto-card">
+                        <figure class="projeto-imagem">
+                            <img src="imagens/projetos/crud.png"
+                                alt="Composição ilustrativa de formulário e tabela para cadastro de veículos."
+                                width="1200" height="750" loading="lazy" decoding="async">
+                            <figcaption>Arte de apresentação do projeto · dados ilustrativos</figcaption>
+                        </figure>
+
+                        <div class="projeto-conteudo">
+                            <h3>CRUD com JavaScript</h3>
+
+                            <p>
+                                Aplicação de cadastro de veículos em memória,
+                                desenvolvida com JavaScript, permitindo
+                                adicionar, listar, editar e remover registros.
+                            </p>
+
+                            <div class="tecnologias-projeto" role="group" aria-label="Tecnologias do projeto">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+
+                            <div class="projeto-links">
+                                <a href="https://github.com/raiandev-04/CRUD"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+                                    GitHub do projeto<span class="visualmente-oculto">: CRUD com JavaScript</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="projeto-card">
+                        <figure class="projeto-imagem">
+                            <img src="imagens/projetos/caixa.png"
+                                alt="Composição ilustrativa do terminal e recibo do Sistema Caixa."
+                                width="1200" height="750" loading="lazy" decoding="async">
+                            <figcaption>Arte de apresentação do projeto · dados ilustrativos</figcaption>
+                        </figure>
+                        <div class="projeto-conteudo">
+                            <h3>Sistema Caixa</h3>
+                            <p>Aplicação de caixa no terminal, com cadastro de produtos da compra, cálculo de subtotais, pagamento, desconto, troco e recibo.</p>
+                            <p class="projeto-nota">Em desenvolvimento.</p>
+                            <div class="tecnologias-projeto" role="group" aria-label="Tecnologias do projeto">
+                                <span>Python</span>
+                            </div>
+                            <div class="projeto-links">
+                                <a href="https://github.com/raiandev-04/projetos-python-curso-em-video" target="_blank" rel="noopener noreferrer">GitHub do projeto<span class="visualmente-oculto">: Sistema Caixa</span></a>
                             </div>
                         </div>
                     </article>
