@@ -161,7 +161,6 @@ nav ul a:hover {
 }
 
 .hero-botoes a:hover,
-.contato-links a:hover,
 .projeto-links a:hover {
     background-color: var(--cor-destaque);
     color: var(--cor-sobre-destaque);
@@ -571,15 +570,86 @@ nav ul a:hover {
     margin-bottom: 25px;
 }
 
+/* Contato: ícones e ações sem cartões individuais. */
 .contato-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px 20px;
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid var(--cor-borda);
 }
 
-.contato-links a,
+.contato-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    padding: 16px 4px;
+    border-radius: 8px;
+    color: var(--cor-texto);
+    text-align: center;
+    text-decoration: none;
+}
+
+.contato-item img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 6px;
+    object-fit: contain;
+    transition: transform 0.2s;
+}
+
+.contato-nome {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    transition: color 0.2s;
+}
+
+.contato-acao {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+:root[data-tema="escuro"] .contato-item img[src$="/github.svg"] {
+    filter: invert(1);
+}
+
+.contato-pendente .contato-acao {
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .contato-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    a.contato-item:hover img {
+        transform: translateY(-3px);
+    }
+
+    a.contato-item:hover .contato-nome {
+        color: var(--cor-destaque);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contato-item img,
+    .contato-nome {
+        transition: none;
+    }
+
+    a.contato-item:hover img {
+        transform: none;
+    }
+}
+
 .projeto-links a {
     padding: 10px 18px;
 
@@ -651,8 +721,7 @@ footer p {
 
 /* Responsividade */
 @media (max-width: 480px) {
-    .hero-botoes,
-    .contato-links {
+    .hero-botoes {
         flex-direction: column;
     }
 
