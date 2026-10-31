@@ -267,6 +267,7 @@ nav ul a:hover {
 
 .tecnologia-lista {
     display: flex;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 24px 28px;
 }
@@ -302,6 +303,11 @@ nav ul a:hover {
     text-align: center;
     white-space: nowrap;
     transition: color 0.2s;
+}
+
+/* O nome composto pode ocupar duas linhas, sem alterar os demais rótulos. */
+.tecnologia-item-workbench .tecnologia-nome {
+    white-space: normal;
 }
 
 /* O SVG monocromático do GitHub fica claro somente no tema escuro. */
@@ -783,6 +789,31 @@ button:focus-visible {
 
 .hero-botoes .botao-principal:hover {
     background-color: var(--cor-texto);
+}
+
+/* CTAs sociais do Hero: cores fixas e contraste nos dois temas. */
+.hero-botoes .botao-github {
+    background-color: #24292f;
+    border-color: #8c959f;
+    color: #ffffff;
+}
+
+.hero-botoes .botao-github:hover {
+    background-color: #32383f;
+    border-color: #8c959f;
+    color: #ffffff;
+}
+
+.hero-botoes .botao-linkedin {
+    background-color: #0a66c2;
+    border-color: #0a66c2;
+    color: #ffffff;
+}
+
+.hero-botoes .botao-linkedin:hover {
+    background-color: #004182;
+    border-color: #004182;
+    color: #ffffff;
 }
 
 .tecnologia-grupo,
