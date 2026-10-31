@@ -96,7 +96,7 @@
         atualizarProgresso();
     }
 
-    /* Link ativo: mantém o IntersectionObserver escrito na V2. */
+    /* Link ativo: observa as seções e usa o rodapé para identificar o fim da página. */
     if (menu && 'IntersectionObserver' in window) {
         const links = [...menu.querySelectorAll('a[href^="#"]')];
         function destacarSecao(id) {
@@ -107,12 +107,29 @@
                 else link.removeAttribute('aria-current');
             });
         }
+        const secoes = [...document.querySelectorAll('main section[id]')];
+        const ultimaSecao = secoes[secoes.length - 1];
+        let secaoAtual = 'inicio';
+        let rodapeInteiroVisivel = false;
+
         const obs = new IntersectionObserver(entradas => {
             entradas.forEach(entrada => {
-                if (entrada.isIntersecting) destacarSecao(entrada.target.id);
+                if (entrada.isIntersecting) secaoAtual = entrada.target.id;
             });
+            destacarSecao(rodapeInteiroVisivel && ultimaSecao ? ultimaSecao.id : secaoAtual);
         }, { rootMargin: '-20% 0px -65% 0px' });
-        document.querySelectorAll('main section[id]').forEach(secao => obs.observe(secao));
+        secoes.forEach(secao => obs.observe(secao));
+
+        // A última seção pode não alcançar a faixa do observador em telas altas.
+        const rodape = document.querySelector('footer');
+        if (rodape && ultimaSecao) {
+            // A margem de 1 px tolera o arredondamento da rolagem no fim da página.
+            const observadorRodape = new IntersectionObserver(([entrada]) => {
+                rodapeInteiroVisivel = entrada.isIntersecting && entrada.intersectionRatio >= 1;
+                destacarSecao(rodapeInteiroVisivel ? ultimaSecao.id : secaoAtual);
+            }, { threshold: 1, rootMargin: '0px 0px 1px 0px' });
+            observadorRodape.observe(rodape);
+        }
     }
 
     /* Digitação: texto acessível estável, pausa manual e preferência de movimento. */

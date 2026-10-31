@@ -8,6 +8,8 @@
     --cor-sobre-destaque: #ffffff;
     --cor-realce-suave: rgba(37, 99, 235, 0.08);
     --sombra-realce: 0 20px 55px rgba(37, 99, 235, 0.14);
+    --raio-card: 14px;
+    --sombra-card: 0 4px 16px rgba(0, 0, 0, 0.04);
     color-scheme: light;
 }
 
@@ -170,13 +172,12 @@ nav ul a:hover {
     max-width: 900px;
     margin: 0 auto;
 
-    padding: 80px 40px;
+    padding: 72px 40px;
 }
 
 .sobre h2 {
     font-size: 32px;
-
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .sobre p {
@@ -194,7 +195,7 @@ nav ul a:hover {
     max-width: 1100px;
     margin: 0 auto;
 
-    padding: 80px 40px;
+    padding: 72px 40px;
 }
 
 .tecnologias h2,
@@ -207,7 +208,11 @@ nav ul a:hover {
 
 }
 
+/* Traço apenas nos títulos de seção alinhados à esquerda, fora do Hero. */
+.projetos h2::after,
+.sobre h2::after,
 .tecnologias h2::after,
+.experiencia h2::after,
 .formacao h2::after,
 .cursos h2::after {
     content: "";
@@ -236,9 +241,9 @@ nav ul a:hover {
 .tecnologia-grupo {
     padding: clamp(20px, 2.5vw, 28px);
     border: 1px solid var(--cor-borda);
-    border-radius: 14px;
+    border-radius: var(--raio-card);
     background-color: var(--cor-card);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--sombra-card);
 }
 
 .tecnologia-grupo h3 {
@@ -333,22 +338,11 @@ nav ul a:hover {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .tecnologia-item img,
-    .tecnologia-nome {
-        transition: none;
-    }
-
-    .tecnologia-item:hover img {
-        transform: none;
-    }
-}
-
 .experiencia-card {
     background-color: var(--cor-card);
 
     border: 1px solid var(--cor-borda);
-    border-radius: 10px;
+    border-radius: var(--raio-card);
 
     padding: 30px;
 }
@@ -403,9 +397,9 @@ nav ul a:hover {
     flex-direction: column;
     overflow: hidden;
     border: 1px solid var(--cor-borda);
-    border-radius: 14px;
+    border-radius: var(--raio-card);
     background-color: var(--cor-card);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--sombra-card);
     transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
@@ -487,25 +481,19 @@ nav ul a:hover {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .formacao-card {
-        transition: none;
-    }
-}
-
 .projeto-card {
     display: flex;
     flex-direction: column;
     background-color: var(--cor-card);
 
     border: 1px solid var(--cor-borda);
-    border-radius: 10px;
+    border-radius: var(--raio-card);
 
     overflow: hidden;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--sombra-card);
 
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
 .projeto-conteudo {
@@ -583,6 +571,18 @@ nav ul a:hover {
     align-items: center;
     min-height: 44px;
     line-height: 1.4;
+
+    padding: 10px 18px;
+
+    border: 1px solid var(--cor-destaque);
+    border-radius: 5px;
+
+    color: var(--cor-destaque);
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -597,7 +597,7 @@ nav ul a:hover {
     max-width: 900px;
     margin: 0 auto;
 
-    padding: 80px 40px;
+    padding: 72px 40px;
 
     text-align: center;
 }
@@ -684,31 +684,6 @@ nav ul a:hover {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .contato-item img,
-    .contato-nome {
-        transition: none;
-    }
-
-    a.contato-item:hover img {
-        transform: none;
-    }
-}
-
-.projeto-links a {
-    padding: 10px 18px;
-
-    border: 1px solid var(--cor-destaque);
-    border-radius: 5px;
-
-    color: var(--cor-destaque);
-
-    text-decoration: none;
-    font-weight: bold;
-
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-}
-
 footer {
     background-color: var(--cor-card);
 
@@ -749,7 +724,7 @@ footer p {
     .cursos,
     .projetos,
     .contato {
-        padding: 60px 20px;
+        padding: 52px 20px;
     }
 
     .tecnologias-grid,
@@ -817,24 +792,6 @@ button:focus-visible {
     min-width: 0;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-        transition: none;
-    }
-
-    .tecnologia-grupo:hover,
-    .formacao-card:hover,
-    .projeto-card:hover {
-        transform: none;
-    }
-}
-
 /* Cursos: título, descrição e plataforma com hierarquia própria. */
 .cursos-grid {
     gap: 20px;
@@ -848,9 +805,9 @@ button:focus-visible {
     padding: clamp(22px, 2.5vw, 30px);
     border: 1px solid var(--cor-borda);
     border-top: 3px solid var(--cor-destaque);
-    border-radius: 14px;
+    border-radius: var(--raio-card);
     background-color: var(--cor-card);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--sombra-card);
     transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -884,16 +841,6 @@ button:focus-visible {
         border-color: var(--cor-destaque);
         box-shadow: 0 8px 24px var(--cor-realce-suave);
         transform: translateY(-3px);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .curso-card {
-        transition: none;
-    }
-
-    .curso-card:hover {
-        transform: none;
     }
 }
 
@@ -1127,4 +1074,26 @@ nav a.ativo {
 ::selection {
     background: var(--cor-destaque);
     color: var(--cor-sobre-destaque);
+}
+
+/* A preferência de acessibilidade prevalece sobre as transições dos componentes. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .formacao-card:hover,
+    .projeto-card:hover,
+    .curso-card:hover,
+    .tecnologia-item:hover img,
+    a.contato-item:hover img {
+        transform: none;
+    }
 }
