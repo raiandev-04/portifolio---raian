@@ -68,12 +68,17 @@ Não há instalação de dependências nem comandos de build.
 
 Também é possível abrir `index.html` diretamente no navegador; prefira um servidor HTTP local para revisar a página. O Live Server é uma ferramenta de desenvolvimento e não uma dependência do site.
 
+### WhatsApp
+
+O portfólio possui contato direto pelo WhatsApp através de um link `wa.me`, com mensagem pré-preenchida.
+
+Ao clicar no contato, o visitante é direcionado para uma conversa comigo no WhatsApp, sem necessidade de formulário ou backend.
+
 ## Pendências para V3.1
 
 - Fotos das unidades Anhanguera e SENAI com identificação e origem confirmadas;
 - Capturas reais dos projetos após validação dos respectivos ambientes;
 - Dados e links de certificados, caso sejam fornecidos;
-- Link do WhatsApp após confirmação do número;
 - Favicon, metadados de SEO e preview de compartilhamento.
 
 Os TODOs no HTML registram os dados pendentes. Não há número fictício de WhatsApp, certificados presumidos ou URLs inventadas de demonstração.
